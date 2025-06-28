@@ -2,7 +2,12 @@ export const projects = [
   {
     id: "1",
     name: "Parcel Delivery App",
-    image: "https://i.postimg.cc/Dy4vHrmb/parcel.png",
+    images: [
+      "https://i.postimg.cc/g2srZ48L/MA-SHIFT-Banner.png",
+      "https://i.postimg.cc/pXx2Jz2f/Visiable.png",
+      "https://i.postimg.cc/Vkmdv2rc/Coverage.png",
+      "https://i.postimg.cc/fbbyjXf2/MA-SHIFT.png",
+    ],
     description:
       "A full-stack parcel delivery platform with role-based dashboards, parcel tracking, and delivery cost calculations.",
     stack: [
@@ -24,13 +29,28 @@ export const projects = [
   {
     id: "2",
     name: "Restaurant Management System",
-    image: "https://i.postimg.cc/0jWy63b7/restaurant.png",
+    images: [
+      "https://i.postimg.cc/B6Fg5NHs/Restaurant-Management-System-Google-Chrome-6-28-2025-8-31-46-AM.png",
+      "https://i.postimg.cc/FzQxTcVS/Restaurant-Management-System-Google-Chrome-6-28-2025-8-31-52-AM.png",
+      "https://i.postimg.cc/5tTgFDHn/Restaurant-Management-System-Google-Chrome-6-28-2025-8-31-55-AM.png",
+      "https://i.postimg.cc/7LfXhqL5/Restaurant-Management-System-Google-Chrome-6-28-2025-8-32-13-AM.png",
+      "https://i.postimg.cc/CMj7zPws/Restaurant-Management-System-Google-Chrome-6-28-2025-8-33-26-AM.png",
+      "https://i.postimg.cc/RhQLyFgD/Restaurant-Management-System-Google-Chrome-6-28-2025-8-32-35-AM.png",
+    ],
     description:
       "A restaurant app for managing foods, orders, and customer interactions with admin and user dashboards.",
-    stack: ["React", "Node.js", "MongoDB", "Firebase", "Tailwind CSS"],
-    live: "https://restaurant-management.netlify.app",
-    client: "https://github.com/yourusername/restaurant-client",
-    server: "https://github.com/yourusername/restaurant-server",
+    stack: [
+      "HTML",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Firebase",
+      "Tailwind CSS",
+    ],
+    live: "https://ma-restaurant.netlify.app/",
+    client: "https://github.com/azijulhakimbd/MA-Restaurant-Client",
+    server: "https://github.com/azijulhakimbd/MA-Restaurant-Server",
     challenges:
       "Handling dynamic food items, filtering per user/admin, secure data flow.",
     improvements:
@@ -38,14 +58,27 @@ export const projects = [
   },
   {
     id: "3",
-    name: "English Janala",
-    image: "https://i.postimg.cc/qRPxvJZ0/english.png",
+    name: "HobbyHub - A Local Hobby Group Organizer",
+    images: [
+      "https://i.postimg.cc/yxwZ8zkz/hobbyhub-03.png",
+      "https://i.postimg.cc/wMtNzBxV/hobby.png",
+      "https://i.postimg.cc/9MQTxpvs/h-02.png",
+    ],
     description:
-      "An educational platform focused on learning English vocabulary, grammar tips, and user-friendly interaction.",
-    stack: ["HTML", "Tailwind CSS", "JavaScript"],
-    live: "https://english-janala.netlify.app",
-    client: "https://github.com/yourusername/english-janala",
-    server: "",
+      "Welcome to HobbyHub, a platform to discover, join, and create local hobby groups like book clubs, painting circles, or hiking teams. Whether you're into reading, running, or creating—HobbyHub connects you to people with similar interests in your area.",
+    stack: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Firebase",
+      "HTML",
+      "Tailwind CSS",
+      "JavaScript",
+      "JWT",
+    ],
+    live: "https://b11-a10-papiya.netlify.app/",
+    client: "https://github.com/azijulhakimbd/HobbyHub-Client",
+    server: "https://github.com/azijulhakimbd/HobbyHub-Server",
     challenges: "Responsive UI and local data search/filter logic.",
     improvements:
       "User authentication, leaderboard system, and personalized quizzes.",

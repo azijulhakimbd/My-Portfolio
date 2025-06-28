@@ -28,7 +28,7 @@ const Banner = () => {
 
           {/* Resume Download Button */}
           <a
-            href="/resume.pdf"
+            href="https://drive.google.com/file/d/1aF1p8KBij2UPkRaQZEk9yRX-Yb4Is5EK/view?usp=sharing"
             download
             className="btn btn-primary mt-2 w-52"
           >

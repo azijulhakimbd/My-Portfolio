@@ -77,10 +77,10 @@ const Navbar = () => {
             {navLinks}
             <li>
               <a
-                href="/resume.pdf"
-                download
-                className="btn btn-info w-full text-center"
-                aria-label="Download Resume"
+                href="https://drive.google.com/file/d/1aF1p8KBij2UPkRaQZEk9yRX-Yb4Is5EK/view?usp=sharing"
+                
+                className="btn btn-info  text-center"
+                
               >
                 Resume
               </a>
