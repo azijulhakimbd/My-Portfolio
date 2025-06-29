@@ -1,5 +1,7 @@
 import React from "react";
 import { FaWhatsapp, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
+import Lottie from "lottie-react";
+import contactAnimation from "../../../assets/Lottie/Email.json";
 
 const Contact = () => {
   const whatsappNumber = "8801758524125";
@@ -8,11 +10,9 @@ const Contact = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-20">
-      <h2 className="text-3xl font-bold text-start text-primary mb-10">
-        Contact Me
-      </h2>
+      <h2 className="text-3xl font-bold text-start text-primary mb-10">Contact Me</h2>
 
-      <div className="grid md:grid-cols-2 gap-10">
+      <div className="grid md:grid-cols-2 gap-10 items-center">
         {/* Contact Info */}
         <div className="space-y-5 text-lg">
           <div className="flex items-center gap-3">
@@ -34,15 +34,11 @@ const Contact = () => {
 
           <div className="flex items-center gap-3">
             <FaEnvelope className="text-red-500" />
-            <a
-              href="mailto:azijul.info@gmail.com"
-              className="link link-hover text-primary"
-            >
+            <a href="mailto:azijul.info@gmail.com" className="link link-hover text-primary">
               azijul.info@gmail.com
             </a>
           </div>
 
-          {/* QR Code or Image */}
           <div className="mt-6">
             <h4 className="font-semibold mb-2 text-base-content">📱 Scan to More Details</h4>
             <img
@@ -53,38 +49,42 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Contact Form */}
-        <form
-          action="mailto:azijul.info@gmail.com"
-          method="POST"
-          encType="text/plain"
-          className="space-y-4"
-        >
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            className="input input-bordered w-full bg-base-100 text-base-content"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            className="input input-bordered w-full bg-base-100 text-base-content"
-            required
-          />
-          <textarea
-            name="message"
-            rows="4"
-            placeholder="Your Message"
-            className="textarea textarea-bordered w-full bg-base-100 text-base-content"
-            required
-          ></textarea>
-          <button type="submit" className="btn btn-primary w-full md:w-auto">
-            Send Message
-          </button>
-        </form>
+        {/* Lottie Animation & Contact Form */}
+        <div className="space-y-6">
+          <Lottie animationData={contactAnimation} loop={true} className=" h-50" />
+
+          <form
+            action="mailto:azijul.info@gmail.com"
+            method="POST"
+            encType="text/plain"
+            className="space-y-4"
+          >
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              className="input input-bordered w-full bg-base-100 text-base-content"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              className="input input-bordered w-full bg-base-100 text-base-content"
+              required
+            />
+            <textarea
+              name="message"
+              rows="4"
+              placeholder="Your Message"
+              className="textarea textarea-bordered w-full bg-base-100 text-base-content"
+              required
+            ></textarea>
+            <button type="submit" className="btn btn-primary w-full md:w-auto">
+              Send Message
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

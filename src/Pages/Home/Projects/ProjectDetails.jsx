@@ -1,10 +1,20 @@
-import React from "react";
-import { useParams, Link } from "react-router"; 
+import React, { useEffect, useState } from "react";
+import { useParams, Link } from "react-router";
 import { projects } from "../../../assets/projects";
 
 const ProjectDetails = () => {
   const { id } = useParams();
   const project = projects.find((p) => p.id === id);
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
+
+  useEffect(() => {
+    if (project?.image?.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentImgIndex((prev) => (prev + 1) % project.image.length);
+      }, 3000); // change image every 3s
+      return () => clearInterval(interval);
+    }
+  }, [project]);
 
   if (!project)
     return (
@@ -17,11 +27,13 @@ const ProjectDetails = () => {
     <div className="max-w-4xl mx-auto px-4 py-20">
       <h2 className="text-3xl font-bold text-primary mb-4">{project.name}</h2>
 
-      <img
-        src={project.image}
-        alt={project.name}
-        className="rounded-xl shadow mb-6 w-full max-h-[400px] object-cover"
-      />
+      {Array.isArray(project.images) && project.images.length > 0 && (
+        <img
+          src={project.images[currentImgIndex]}
+          alt={`${project.name} ${currentImgIndex + 1}`}
+          className="rounded-xl shadow mb-6 w-full max-h-[400px] object-cover transition-all duration-500"
+        />
+      )}
 
       <p className="text-base-content text-lg mb-6">{project.description}</p>
 

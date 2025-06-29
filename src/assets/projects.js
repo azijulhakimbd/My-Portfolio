@@ -21,6 +21,13 @@ export const projects = [
     live: "https://parcel-app-live.netlify.app",
     client: "https://github.com/yourusername/parcel-client",
     server: "https://github.com/yourusername/parcel-server",
+    features: [
+      "Role-based login: Admin, Agent, and User",
+      "Real-time parcel tracking",
+      "Cost calculation by weight & distance",
+      "Dashboard with parcel status analytics",
+      "Secure JWT-based route protection",
+    ],
     challenges:
       "Implementing real-time parcel status, secure role-based access for admins and delivery agents.",
     improvements:
@@ -51,6 +58,13 @@ export const projects = [
     live: "https://ma-restaurant.netlify.app/",
     client: "https://github.com/azijulhakimbd/MA-Restaurant-Client",
     server: "https://github.com/azijulhakimbd/MA-Restaurant-Server",
+    features: [
+      "Add and manage food items",
+      "User-specific order history",
+      "Admin panel for food & user management",
+      "Food filtering by category",
+      "Responsive UI with clean layout",
+    ],
     challenges:
       "Handling dynamic food items, filtering per user/admin, secure data flow.",
     improvements:
@@ -65,7 +79,7 @@ export const projects = [
       "https://i.postimg.cc/9MQTxpvs/h-02.png",
     ],
     description:
-      "Welcome to HobbyHub, a platform to discover, join, and create local hobby groups like book clubs, painting circles, or hiking teams. Whether you're into reading, running, or creating—HobbyHub connects you to people with similar interests in your area.",
+      "Welcome to HobbyHub, a platform to discover, join, and create local hobby groups like book clubs, painting circles, or hiking teams.",
     stack: [
       "React",
       "Node.js",
@@ -79,6 +93,13 @@ export const projects = [
     live: "https://b11-a10-papiya.netlify.app/",
     client: "https://github.com/azijulhakimbd/HobbyHub-Client",
     server: "https://github.com/azijulhakimbd/HobbyHub-Server",
+    features: [
+      "Join or create local hobby groups",
+      "Search hobbies by category/location",
+      "Group activity feed and updates",
+      "Clean UI optimized for mobile users",
+      "Firebase authentication",
+    ],
     challenges: "Responsive UI and local data search/filter logic.",
     improvements:
       "User authentication, leaderboard system, and personalized quizzes.",

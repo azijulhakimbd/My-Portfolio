@@ -1,32 +1,32 @@
 import React from "react";
+import { Link } from "react-router";
+import Lottie from "lottie-react";
+import notFoundAnim from "../../../assets/Lottie/404.json"; 
 
 const Error = () => {
   return (
-    <div>
-      <section className="flex items-center h-full p-16 ">
-        <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-          <div className="max-w-md text-center">
-            <h2 className="mb-8 font-extrabold text-9xl dark:text-gray-400">
-              <span className="sr-only">Error</span>404
-            </h2>
-            <p className="text-2xl font-semibold md:text-3xl">
-              Sorry, we couldn't find this page.
-            </p>
-            <p className="mt-4 mb-8 dark:text-gray-600">
-              But dont worry, you can find plenty of other things on our
-              homepage.
-            </p>
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              className="px-8 py-3 font-semibold rounded dark:bg-fuchsia-600 dark:text-gray-50"
-            >
-              Back to homepage
-            </a>
-          </div>
+    <section className="flex items-center min-h-screen p-8 bg-white text-base-content">
+      <div className="container flex flex-col items-center justify-center mx-auto">
+        {/* Lottie Animation */}
+        <div className="max-w-md w-full mb-6">
+          <Lottie animationData={notFoundAnim} loop />
         </div>
-      </section>
-    </div>
+
+        {/* Text Content */}
+        <div className="text-center">
+          <h2 className="mb-4 text-4xl font-bold text-error">404 - Page Not Found</h2>
+          <p className="text-lg mb-6">
+            Sorry, we couldn’t find this page. But don’t worry — you can return to the homepage.
+          </p>
+          <Link
+            to="/"
+            className="btn btn-primary"
+          >
+            🔙 Back to Homepage
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 };
 

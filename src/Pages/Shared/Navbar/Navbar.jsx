@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import ToggleTheme from "../../../Components/ToggleTheme";
 
 const Navbar = () => {
   const navLinks = (
@@ -22,7 +23,8 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-md fixed z-50 top-0 px-4">
+    <div className="navbar bg-base-100 shadow-md fixed z-50 top-0 px-5 lg:px-10">
+      {/* Logo */}
       <div className="navbar-start">
         <Link to="/" className="text-xl font-bold text-primary">
           <img
@@ -39,19 +41,21 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
 
-      {/* Mobile menu + Resume button */}
+      {/* End: Theme toggle, resume, menu */}
       <div className="navbar-end flex items-center gap-2">
-        {/* Resume button visible only on large screens */}
-        <a
-          href="/resume.pdf"
-          download
-          className="btn btn-info hidden lg:inline-block"
-          aria-label="Download Resume"
-        >
-          Resume
-        </a>
+        {/* Theme toggle always visible */}
+        <ToggleTheme />
 
-        {/* Hamburger menu on small screens */}
+        {/* Resume button for desktop */}
+        <Link
+          className="btn btn-info text-center"
+          to="https://drive.google.com/file/d/1aF1p8KBij2UPkRaQZEk9yRX-Yb4Is5EK/view?usp=sharing"
+        >
+         
+          Resume
+        </Link>
+
+        {/* Mobile dropdown menu */}
         <div className="dropdown dropdown-end lg:hidden">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <svg
@@ -59,8 +63,8 @@ const Navbar = () => {
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
@@ -75,16 +79,6 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             {navLinks}
-            <li>
-              <a
-                href="https://drive.google.com/file/d/1aF1p8KBij2UPkRaQZEk9yRX-Yb4Is5EK/view?usp=sharing"
-                
-                className="btn btn-info  text-center"
-                
-              >
-                Resume
-              </a>
-            </li>
           </ul>
         </div>
       </div>
