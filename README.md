@@ -1,6 +1,6 @@
-# 💼 MD. Azijul Hakim — Developer Portfolio
+# 💼 Md. Azijul Hakim — Font-End Developer 
 
-Welcome to my personal developer portfolio website, built to showcase my projects, technical skills, and contact information. This responsive web app is built using modern technologies like React, Tailwind CSS, and Firebase.
+Welcome to my personal developer portfolio website, built to showcase my projects, technical skills, and contact information. This responsive web app is built using modern technologies like React, Tailwind CSS, and DaisyUI.
 
 ![Portfolio Preview](https://i.postimg.cc/BQpwgZk7/Md-Azijul-Hakim.png)
 
