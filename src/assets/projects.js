@@ -1,4 +1,6 @@
 export const projects = [
+  // Latest Project First
+  // MA Shift Project
   {
     id: "1",
     name: "Parcel Delivery App",
@@ -18,9 +20,9 @@ export const projects = [
       "JWT",
       "Firebase",
     ],
-    live: "https://parcel-app-live.netlify.app",
-    client: "https://github.com/yourusername/parcel-client",
-    server: "https://github.com/yourusername/parcel-server",
+    live: "https://ma-shift.netlify.app/",
+    client: "https://github.com/azijulhakimbd/MA-Shift-Client",
+    server: "https://github.com/azijulhakimbd/MA-Shift-Server",
     features: [
       "Role-based login: Admin, Agent, and User",
       "Real-time parcel tracking",
@@ -33,6 +35,7 @@ export const projects = [
     improvements:
       "Integrate payment gateway, add delivery confirmation by OTP, and admin analytics dashboard.",
   },
+  // MA Restaurant Project
   {
     id: "2",
     name: "Restaurant Management System",
@@ -70,6 +73,7 @@ export const projects = [
     improvements:
       "Add delivery scheduling, push notifications, and exportable reports.",
   },
+  // HobbyHub Project
   {
     id: "3",
     name: "HobbyHub - A Local Hobby Group Organizer",
@@ -103,5 +107,41 @@ export const projects = [
     challenges: "Responsive UI and local data search/filter logic.",
     improvements:
       "User authentication, leaderboard system, and personalized quizzes.",
+  },
+  // Phudu Medical Appointment
+  {
+    id: "4",
+    name: "Medical Appointment System",
+    images: [
+      "https://i.postimg.cc/L5CYxgMV/Phudu.png",
+      "https://i.postimg.cc/J04H3cSn/Doctor.png",
+      "https://i.postimg.cc/Z513kNv7/Review.png",
+      "https://i.postimg.cc/gJpZjPD3/Doctor-Details.png",
+      "https://i.postimg.cc/wBLN9Bh6/Booking.png",
+      "https://i.postimg.cc/PxM88F39/Blog.png",
+    ],
+    description:
+      "A modern and user-friendly medical appointment booking web application built with React. Seamlessly search doctors, view their profiles, and book appointments with ease.",
+    stack: [
+      "React",
+      "React Router",
+      "React Recharts",
+      "Tailwind CSS",
+      "JavaScript",
+    ],
+    live: "https://phudu-medical-appointment.netlify.app/",
+    client: "https://github.com/azijulhakimbd/Phudu-Medical-Appointment",
+    server: "",
+    features: [
+      "View doctor profiles with image, rating, experience, and fee",
+      "Book appointments with one click",
+      "Data visualization using charts",
+      "Fully responsive layout",
+      "Fast, intuitive, and modern UI",
+    ],
+    challenges:
+      "Designing an intuitive user interface for both patients and doctors, and implementing reusable modal logic for booking without a backend.",
+    improvements:
+      "Add real-time appointment conflict detection, implement backend with database support for doctor schedules, and include login/authentication for better user experience.",
   },
 ];

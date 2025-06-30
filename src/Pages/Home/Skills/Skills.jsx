@@ -12,10 +12,13 @@ import {
   SiExpress,
   SiMongodb,
   SiFirebase,
+  SiNetlify,
+  SiFigma,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import Marquee from "react-fast-marquee";
-
+import { IoLogoVercel } from "react-icons/io5";
+import JWT from "../../../assets/JWT.png";
 const skillsData = {
   Frontend: [
     { name: "HTML", icon: <FaHtml5 className="text-orange-600" />, level: 90 },
@@ -53,6 +56,11 @@ const skillsData = {
       icon: <SiFirebase className="text-yellow-500" />,
       level: 80,
     },
+    {
+      name: "JWT",
+      icon: <img src={JWT} alt="JWT" className="w-6 h-6" />,
+      level: 70,
+    },
   ],
   Tools: [
     { name: "Git", icon: <FaGitAlt className="text-red-500" />, level: 85 },
@@ -61,13 +69,24 @@ const skillsData = {
       icon: <VscVscode className="text-blue-600" />,
       level: 90,
     },
+    {
+      name: "Netlify",
+      icon: <SiNetlify className="text-[#32E6E2]" />,
+      level: 95,
+    },
+    {
+      name: "Vercel",
+      icon: <IoLogoVercel className="text-white bg-black rounded-2xl p-1" />,
+      level: 95,
+    },
+    { name: "Figma", icon: <SiFigma className="text-pink-500" />, level: 80 },
   ],
 };
 
 const Skills = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-20">
-      <h2 className="text-3xl font-bold text-start text-primary mb-10">
+      <h2 className="text-3xl font-bold text-start poppins-bold text-primary mb-10">
         My Skills
       </h2>
 
@@ -93,14 +112,14 @@ const Skills = () => {
             key={category}
             className="bg-base-100 rounded-xl shadow-lg p-6 transition hover:shadow-xl"
           >
-            <h3 className="text-xl font-semibold text-secondary mb-4">
+            <h3 className="text-xl poppins-bold font-semibold text-secondary mb-4">
               {category}
             </h3>
             {skills.map((skill) => (
               <div key={skill.name} className="mb-4">
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-xl">{skill.icon}</span>
-                  <span className="font-medium">{skill.name}</span>
+                  <span className="font-medium rubik">{skill.name}</span>
                 </div>
                 <progress
                   className="progress progress-primary w-full"

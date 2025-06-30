@@ -5,7 +5,7 @@ import notFoundAnim from "../../../assets/Lottie/404.json";
 
 const Error = () => {
   return (
-    <section className="flex items-center min-h-screen p-8 bg-white text-base-content">
+    <section className="flex items-center min-h-screen p-8 bg-base-100 text-base-content">
       <div className="container flex flex-col items-center justify-center mx-auto">
         {/* Lottie Animation */}
         <div className="max-w-md w-full mb-6">
@@ -14,8 +14,8 @@ const Error = () => {
 
         {/* Text Content */}
         <div className="text-center">
-          <h2 className="mb-4 text-4xl font-bold text-error">404 - Page Not Found</h2>
-          <p className="text-lg mb-6">
+          <h2 className="mb-4 text-4xl font-bold space-grotesk text-error">404 - Page Not Found</h2>
+          <p className="text-lg fira-sans-bold mb-6">
             Sorry, we couldn’t find this page. But don’t worry — you can return to the homepage.
           </p>
           <Link

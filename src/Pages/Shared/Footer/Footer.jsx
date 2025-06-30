@@ -9,7 +9,7 @@ import { Link } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="bg-base-200 text-base-content py-10 mt-16">
+    <footer className="bg-base-200 poppins-bold text-base-content py-10 mt-16">
       <div className="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row justify-between items-center gap-8">
         {/* Left: Branding */}
         <div className="text-center lg:text-left">
@@ -20,7 +20,7 @@ const Footer = () => {
               alt="MAH"
             />
           </Link>
-          <p className="text-sm">© {new Date().getFullYear()} All Rights Reserved</p>
+          <p className="inter text-primary">© {new Date().getFullYear()} All Rights Reserved</p>
         </div>
 
         {/* Center: Social Links */}
@@ -58,12 +58,12 @@ const Footer = () => {
         </div>
 
         {/* Right: Navigation Links */}
-        <div className="flex flex-wrap justify-center lg:justify-end gap-2 text-sm">
-          <Link to="/" className="btn btn-sm btn-ghost text-info">Home</Link>
-          <Link to="/about" className="btn btn-sm btn-ghost text-info">About</Link>
-          <Link to="/skills" className="btn btn-sm btn-ghost text-info">Skills</Link>
-          <Link to="/projects" className="btn btn-sm btn-ghost text-info">Projects</Link>
-          <Link to="/contact" className="btn btn-sm btn-ghost text-info">Contact</Link>
+        <div className="flex flex-wrap justify-center lg:justify-end gap-2 text-lg">
+          <Link to="/" className="btn btn-sm btn-ghost text-primary">Home</Link>
+          <Link to="/about" className="btn btn-sm btn-ghost text-primary">About</Link>
+          <Link to="/skills" className="btn btn-sm btn-ghost text-primary">Skills</Link>
+          <Link to="/projects" className="btn btn-sm btn-ghost text-primary">Projects</Link>
+          <Link to="/contact" className="btn btn-sm btn-ghost text-primary">Contact</Link>
         </div>
       </div>
     </footer>

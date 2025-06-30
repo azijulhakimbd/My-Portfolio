@@ -9,10 +9,10 @@ const Contact = () => {
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-20">
-      <h2 className="text-3xl font-bold text-start text-primary mb-10">Contact Me</h2>
+    <div data-aos="zoom-in" className="max-w-6xl mx-auto px-4 py-20">
+      <h2 className="space-grotesk text-3xl font-bold text-start text-primary mb-10">Contact Me</h2>
 
-      <div className="grid md:grid-cols-2 gap-10 items-center">
+      <div className="grid fira-sans-bold md:grid-cols-2 gap-10 items-center">
         {/* Contact Info */}
         <div className="space-y-5 text-lg">
           <div className="flex items-center gap-3">
@@ -40,7 +40,7 @@ const Contact = () => {
           </div>
 
           <div className="mt-6">
-            <h4 className="font-semibold mb-2 text-base-content">📱 Scan to More Details</h4>
+            <h4 className="font-semibold fira-sans-bold mb-2 text-base-content">📱 Scan to More Details</h4>
             <img
               className="w-40 border rounded-md shadow"
               src="https://i.postimg.cc/3RKKHf1J/Contact.jpg"
@@ -57,7 +57,7 @@ const Contact = () => {
             action="mailto:azijul.info@gmail.com"
             method="POST"
             encType="text/plain"
-            className="space-y-4"
+            className="space-y-4 inter"
           >
             <input
               type="text"
@@ -80,7 +80,7 @@ const Contact = () => {
               className="textarea textarea-bordered w-full bg-base-100 text-base-content"
               required
             ></textarea>
-            <button type="submit" className="btn btn-primary w-full md:w-auto">
+            <button type="submit" className="rubik btn btn-primary w-full md:w-auto">
               Send Message
             </button>
           </form>

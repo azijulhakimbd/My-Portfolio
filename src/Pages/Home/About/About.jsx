@@ -2,10 +2,10 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-20">
-      <h2 className="text-3xl font-bold text-primary mb-6">About Me</h2>
+    <div data-aos="fade-up-right" className="max-w-5xl mx-auto px-4 py-20">
+      <h2 className="rubik text-3xl font-bold text-primary mb-6">About Me</h2>
 
-      <div className="space-y-6 text-base-content text-lg leading-relaxed">
+      <div className="space-y-6 inter text-base-content text-lg leading-relaxed">
         <p>
           I'm <span className="font-semibold text-primary">Md. Azijul Hakim</span>, a dedicated and detail-oriented frontend developer
           with a deep love for clean code and smooth user experiences. My journey

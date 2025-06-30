@@ -1,4 +1,4 @@
-# 💼 Md. Azijul Hakim — Font-End Developer 
+# 💼 Md. Azijul Hakim — FontEnd Developer 
 
 Welcome to my personal developer portfolio website, built to showcase my projects, technical skills, and contact information. This responsive web app is built using modern technologies like React, Tailwind CSS, and DaisyUI.
 
@@ -38,7 +38,8 @@ Welcome to my personal developer portfolio website, built to showcase my project
 - Lottie React
 - React Icons
 - React Fast Marquee
-
+- Lottie React
+- AOS
 
 ---
 

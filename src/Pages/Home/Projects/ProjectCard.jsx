@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
-
+import { FaGlobe, FaCode, FaServer, FaArrowRight } from "react-icons/fa";
+import { TbStack } from "react-icons/tb";
+import { FiInfo } from "react-icons/fi";
 const ProjectCard = ({ project }) => {
   const [current, setCurrent] = useState(0);
 
@@ -12,9 +14,9 @@ const ProjectCard = ({ project }) => {
   }, [project.images.length]);
 
   return (
-    <div className="card bg-base-100 shadow-xl border-primary border hover:shadow-2xl transition duration-300">
-      {/* Fade Carousel */}
-      <div className="relative h-52 w-full overflow-hidden rounded-t">
+    <div className="card  mx-auto bg-base-100 shadow-md border border-primary hover:shadow-xl transition duration-300">
+      {/* Image Carousel */}
+      <div className="relative h-60 sm:h-72 md:h-80 w-full overflow-hidden rounded-t-lg">
         {project.images.map((img, index) => (
           <img
             key={index}
@@ -28,39 +30,55 @@ const ProjectCard = ({ project }) => {
         ))}
       </div>
 
-      <div className="card-body text-base-content">
-        <h2 className="card-title text-xl font-semibold">{project.name}</h2>
+      {/* Card Body */}
+      <div className="card-body text-base-content p-5">
+        {/* Title */}
+        <h2 className="space-grotesk card-title text-2xl text-primary font-bold">
+           {project.name}
+        </h2>
 
         {/* Description */}
-        <p>{project.description.slice(0, 200)}...</p>
+        <p className="fira-sans-bold text-sm md:text-base">
+          {project.description.slice(0, 150)}...
+        </p>
 
         {/* Features List */}
         {project.features && (
-          <ul className="list-disc list-inside text-sm mt-2 space-y-1">
-            {project.features.slice(0, 4).map((feature, index) => (
-              <li key={index}>{feature}</li>
-            ))}
-          </ul>
+          <div className="mt-3">
+            <p className="font-medium space-grotesk flex items-center gap-2 text-primary">
+               Key Features:
+            </p>
+            <ul className="list-disc list-inside fira-sans-bold text-sm mt-1 space-y-1">
+              {project.features.slice(0, 4).map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
+          </div>
         )}
 
-        {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2 my-3">
-          {project.stack.map((tech, i) => (
-            <span key={i} className="badge badge-outline badge-primary">
-              {tech}
-            </span>
-          ))}
+        {/* Stack Badges */}
+        <div className="my-3">
+          <p className="font-medium flex space-grotesk items-center gap-2 text-primary">
+            <TbStack /> Tech Stack:
+          </p>
+          <div className="flex fira-sans-bold flex-wrap gap-2 mt-2">
+            {project.stack.map((tech, i) => (
+              <span key={i} className="badge badge-outline badge-primary">
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="card-actions justify-start flex-wrap gap-2">
+        {/* Buttons */}
+        <div className="card-actions fira-sans-bold justify-start flex-wrap gap-2 mt-auto">
           <a
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-outline btn-primary btn-sm"
           >
-            🌐 Live
+            <FaGlobe /> Live
           </a>
           <a
             href={project.client}
@@ -68,7 +86,7 @@ const ProjectCard = ({ project }) => {
             rel="noopener noreferrer"
             className="btn btn-outline btn-primary btn-sm"
           >
-            💻 Client
+            <FaCode /> Client
           </a>
           {project.server?.trim() && (
             <a
@@ -77,14 +95,14 @@ const ProjectCard = ({ project }) => {
               rel="noopener noreferrer"
               className="btn btn-outline btn-primary btn-sm"
             >
-              🛠️ Server
+              <FaServer /> Server
             </a>
           )}
           <Link
             to={`/projects/${project.id}`}
             className="btn btn-outline btn-primary btn-sm"
           >
-            🔍 Details
+            <FaArrowRight /> Details
           </Link>
         </div>
       </div>

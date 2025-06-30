@@ -25,7 +25,7 @@ const ProjectDetails = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-20">
-      <h2 className="text-3xl font-bold text-primary mb-4">{project.name}</h2>
+      <h2 className="text-3xl rubik font-bold text-primary mb-4">{project.name}</h2>
 
       {Array.isArray(project.images) && project.images.length > 0 && (
         <img
@@ -35,14 +35,14 @@ const ProjectDetails = () => {
         />
       )}
 
-      <p className="text-base-content text-lg mb-6">{project.description}</p>
+      <p className="text-base-content inter text-lg mb-6">{project.description}</p>
 
       {/* Tech Stack */}
       <div className="mb-6">
-        <h4 className="text-xl font-semibold mb-2 text-base-content">🔧 Tech Stack</h4>
+        <h4 className="text-xl font-semibold mb-2 text-base-content rubik">🔧 Tech Stack</h4>
         <div className="flex flex-wrap gap-2">
           {project.stack.map((tech, i) => (
-            <span key={i} className="badge badge-outline badge-primary">
+            <span key={i} className="badge inter badge-outline badge-primary">
               {tech}
             </span>
           ))}
@@ -51,8 +51,8 @@ const ProjectDetails = () => {
 
       {/* Challenges */}
       <div className="mb-6">
-        <h4 className="text-xl font-semibold mb-2 text-base-content">⚠️ Challenges</h4>
-        <p className="text-base-content">{project.challenges}</p>
+        <h4 className="text-xl font-semibold mb-2 text-base-content rubik">⚠️ Challenges</h4>
+        <p className="text-base-content inter">{project.challenges}</p>
       </div>
 
       {/* Improvements */}
@@ -60,11 +60,11 @@ const ProjectDetails = () => {
         <h4 className="text-xl font-semibold mb-2 text-base-content">
           🚀 Future Improvements
         </h4>
-        <p className="text-base-content">{project.improvements}</p>
+        <p className="text-base-content inter">{project.improvements}</p>
       </div>
 
       {/* Action Buttons */}
-      <div className="mt-8 flex flex-wrap gap-4">
+      <div className="mt-8 poppins-bold flex flex-wrap gap-4">
         <a
           href={project.live}
           target="_blank"
@@ -94,7 +94,7 @@ const ProjectDetails = () => {
           </a>
         )}
 
-        <Link to="/projects" className="btn btn-link btn-sm">
+        <Link to="/projects" className="btn btn-link rubik btn-sm">
           ← Back to Projects
         </Link>
       </div>
