@@ -1,10 +1,21 @@
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { useState, useEffect } from "react";
 import ToggleTheme from "../../../Components/ToggleTheme";
 
+// React Icons
+import {
+  FaHome,
+  FaUser,
+  FaCode,
+  FaProjectDiagram,
+  FaEnvelope,
+  FaFileAlt,
+} from "react-icons/fa";
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const location = useLocation();
+  const currentPath = location.pathname;
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -15,20 +26,71 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/about">About</Link></li>
-      <li><Link to="/skills">Skills</Link></li>
-      <li><Link to="/projects">Projects</Link></li>
-      <li><Link to="/contact">Contact</Link></li>
+      <li>
+        <Link
+          to="/"
+          className={`flex items-center px-3 py-1 rounded ${
+            currentPath === "/" ? "bg-primary text-white" : "hover:bg-base-200"
+          }`}
+        >
+          <FaHome size={20} className="mr-1" /> Home
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/about"
+          className={`flex items-center px-3 py-1 rounded ${
+            currentPath === "/about"
+              ? "bg-primary text-white"
+              : "hover:bg-base-200"
+          }`}
+        >
+          <FaUser size={20} className="mr-1" /> About
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/skills"
+          className={`flex items-center px-3 py-1 rounded ${
+            currentPath === "/skills"
+              ? "bg-primary text-white"
+              : "hover:bg-base-200"
+          }`}
+        >
+          <FaCode size={20} className="mr-1" /> Skills
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/projects"
+          className={`flex items-center px-3 py-1 rounded ${
+            currentPath === "/projects"
+              ? "bg-primary text-white"
+              : "hover:bg-base-200"
+          }`}
+        >
+          <FaProjectDiagram size={20} className="mr-1" /> Projects
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/contact"
+          className={`flex items-center px-3 py-1 rounded ${
+            currentPath === "/contact"
+              ? "bg-primary text-white"
+              : "hover:bg-base-200"
+          }`}
+        >
+          <FaEnvelope size={20} className="mr-1" /> Contact
+        </Link>
+      </li>
     </>
   );
 
   return (
     <div
       className={`navbar shadow fixed z-50 top-0 w-full px-5 lg:px-10 poppins-bold transition-all duration-300 ${
-        isScrolled
-          ? "bg-base-100/5 backdrop-blur-md shadow-sm"
-          : "bg-base-100"
+        isScrolled ? "bg-base-100/5 backdrop-blur-md shadow-sm" : "bg-base-100"
       }`}
     >
       {/* Logo */}
@@ -51,14 +113,14 @@ const Navbar = () => {
       {/* End: Theme toggle, resume, menu */}
       <div className="navbar-end flex items-center gap-2">
         <ToggleTheme />
-        <Link
-          className="btn btn-primary btn-sm"
-          to="https://drive.google.com/file/d/1aF1p8KBij2UPkRaQZEk9yRX-Yb4Is5EK/view?usp=sharing"
+        <a
+          className="btn btn-primary btn-sm flex items-center gap-1"
+          href="https://drive.google.com/file/d/1aF1p8KBij2UPkRaQZEk9yRX-Yb4Is5EK/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Resume
-        </Link>
+          <FaFileAlt /> Resume
+        </a>
 
         {/* Mobile dropdown menu */}
         <div className="dropdown dropdown-end lg:hidden">

@@ -4,8 +4,13 @@ import {
   FaGithub,
   FaLinkedinIn,
   FaEnvelope,
+  FaHome,
+  FaUser,
+  FaCode,
+  FaProjectDiagram,
+  FaPaperPlane,
 } from "react-icons/fa";
-import { Link } from "react-router"; 
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -20,7 +25,9 @@ const Footer = () => {
               alt="MAH"
             />
           </Link>
-          <p className="inter text-primary">© {new Date().getFullYear()} All Rights Reserved</p>
+          <p className="inter text-primary">
+            © {new Date().getFullYear()} All Rights Reserved
+          </p>
         </div>
 
         {/* Center: Social Links */}
@@ -49,21 +56,28 @@ const Footer = () => {
           >
             <FaLinkedinIn />
           </a>
-          <a
-            href="mailto:azijul.info@gmail.com"
-            className="hover:text-primary"
-          >
+          <a href="mailto:azijul.info@gmail.com" className="hover:text-primary">
             <FaEnvelope />
           </a>
         </div>
 
-        {/* Right: Navigation Links */}
-        <div className="flex flex-wrap justify-center lg:justify-end gap-2 text-lg">
-          <Link to="/" className="btn btn-sm btn-ghost text-primary">Home</Link>
-          <Link to="/about" className="btn btn-sm btn-ghost text-primary">About</Link>
-          <Link to="/skills" className="btn btn-sm btn-ghost text-primary">Skills</Link>
-          <Link to="/projects" className="btn btn-sm btn-ghost text-primary">Projects</Link>
-          <Link to="/contact" className="btn btn-sm btn-ghost text-primary">Contact</Link>
+        {/* Right: Navigation Links with Icons */}
+        <div className="flex flex-wrap  justify-center lg:justify-end gap-2 text-xl">
+          <Link to="/" className="btn btn-sm btn-ghost text-primary flex items-center gap-1 poppins-bold font-bold">
+            <FaHome /> Home
+          </Link>
+          <Link to="/about" className="btn btn-sm btn-ghost text-primary flex items-center gap-1 poppins-bold font-bold">
+            <FaUser /> About
+          </Link>
+          <Link to="/skills" className="btn btn-sm btn-ghost text-primary flex items-center gap-1 poppins-bold font-bold">
+            <FaCode /> Skills
+          </Link>
+          <Link to="/projects" className="btn btn-sm btn-ghost text-primary flex items-center gap-1 poppins-bold font-bold">
+            <FaProjectDiagram /> Projects
+          </Link>
+          <Link to="/contact" className="btn btn-sm btn-ghost text-primary flex items-center gap-1 poppins-bold font-bold">
+            <FaPaperPlane /> Contact
+          </Link>
         </div>
       </div>
     </footer>
