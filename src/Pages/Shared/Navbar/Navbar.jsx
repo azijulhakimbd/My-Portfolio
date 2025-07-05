@@ -115,7 +115,7 @@ const Navbar = () => {
         <ToggleTheme />
         <a
           className="btn btn-primary btn-sm flex items-center gap-1"
-          href="https://drive.google.com/file/d/1aF1p8KBij2UPkRaQZEk9yRX-Yb4Is5EK/view?usp=sharing"
+          href="https://drive.google.com/file/d/1PYkcLkx86rO7tMKc0nNcTfju0y6gHmRV/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
         >

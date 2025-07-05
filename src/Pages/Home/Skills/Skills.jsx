@@ -19,6 +19,8 @@ import { VscVscode } from "react-icons/vsc";
 import Marquee from "react-fast-marquee";
 import { IoLogoVercel } from "react-icons/io5";
 import JWT from "../../../assets/JWT.png";
+import { motion } from "framer-motion";
+
 const skillsData = {
   Frontend: [
     { name: "HTML", icon: <FaHtml5 className="text-orange-600" />, level: 90 },
@@ -83,34 +85,59 @@ const skillsData = {
   ],
 };
 
+const iconVariants = {
+  initial: { opacity: 0, scale: 0.8 },
+  animate: { opacity: 1, scale: 1 },
+};
+
+const cardVariants = {
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+};
+
 const Skills = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-20">
-      <h2 className="text-3xl font-bold text-start poppins-bold text-primary mb-10">
+      <motion.h2
+        className="text-3xl font-bold text-start poppins-bold text-primary mb-10"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         My Skills
-      </h2>
+      </motion.h2>
 
       {/* Marquee of icons */}
       <Marquee speed={50} gradient={false} className="mb-10">
         {Object.values(skillsData)
           .flat()
           .map((skill, index) => (
-            <div
+            <motion.div
               key={index}
               className="mx-6 text-5xl tooltip"
               data-tip={skill.name}
+              variants={iconVariants}
+              initial="initial"
+              animate="animate"
+              transition={{ delay: 0.05 * index, type: "spring", stiffness: 120 }}
+              whileHover={{ scale: 1.2 }}
             >
-              <div className="hover:scale-110 duration-300">{skill.icon}</div>
-            </div>
+              <div>{skill.icon}</div>
+            </motion.div>
           ))}
       </Marquee>
 
       {/* Skill categories */}
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {Object.entries(skillsData).map(([category, skills]) => (
-          <div
+        {Object.entries(skillsData).map(([category, skills], i) => (
+          <motion.div
             key={category}
             className="bg-base-100 rounded-xl shadow-lg p-6 transition hover:shadow-xl"
+            variants={cardVariants}
+            initial="initial"
+            animate="animate"
+            transition={{ delay: 0.2 * i, duration: 0.6 }}
+            whileHover={{ scale: 1.03 }}
           >
             <h3 className="text-xl poppins-bold font-semibold text-secondary mb-4">
               {category}
@@ -125,10 +152,10 @@ const Skills = () => {
                   className="progress progress-primary w-full"
                   value={skill.level}
                   max="100"
-                ></progress>
+                />
               </div>
             ))}
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

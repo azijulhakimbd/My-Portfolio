@@ -1,25 +1,56 @@
 import React from "react";
+import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import Spinner from "../../../Components/Spinner";
-import { projects } from "../../../assets/projects"; 
+import { projects } from "../../../assets/projects";
 
 const Projects = () => {
   return (
-    <div data-aos="flip-left" className="max-w-7xl mx-auto px-4 py-20">
-      <h2 className="text-3xl space-grotesk font-bold text-start text-primary mb-10">
+    <motion.div
+      initial={{ opacity: 0, y: 60 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="max-w-7xl mx-auto px-4 py-20"
+    >
+      <motion.h2
+        className="text-3xl space-grotesk font-bold text-start text-primary mb-10"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+      >
         My Projects
-      </h2>
+      </motion.h2>
 
       {projects.length === 0 ? (
         <Spinner />
       ) : (
-        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8">
+        <motion.div
+          className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.15,
+              },
+            },
+          }}
+        >
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <motion.div
+              key={project.id}
+              variants={{
+                hidden: { opacity: 0, scale: 0.9, y: 30 },
+                visible: { opacity: 1, scale: 1, y: 0 },
+              }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+            >
+              <ProjectCard project={project} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 };
 
