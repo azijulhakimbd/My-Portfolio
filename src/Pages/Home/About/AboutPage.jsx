@@ -190,15 +190,15 @@ const AboutPage = () => {
             </li>
             <li className="flex items-center gap-2">
               <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" className="w-5 h-5 rounded-full" />
-              Microsoft Azure Fundamentals – Hi-Tech Park Authority - 2021
+              Microsoft Azure Fundamentals – Bangladesh Hi-Tech Park Authority - 2021
             </li>
             <li className="flex items-center gap-2">
               <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" className="w-5 h-5 rounded-full" />
-              ASP.NET Core MVC – Hi-Tech Park Authority - 2021
+              ASP.NET Core MVC – Bangladesh Hi-Tech Park Authority - 2021
             </li>
             <li className="flex items-center gap-2">
               <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Government_of_Bangladesh_Logo_%28unofficial_and_fictional_logo%29.png" className="w-5 h-5 rounded-full" />
-              Web Design – LEDP, ICT Division, Bangladesh — 2020
+              Web Design and Development – LEDP, ICT Division, Bangladesh — 2020
             </li>
             <li className="flex items-center gap-2">
               <FaGithub className="text-gray-600" />
@@ -244,7 +244,7 @@ const AboutPage = () => {
       <AnimatePresence>
         {selectedImage && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center z-50"
+            className="fixed inset-0 bg-opacity-70 backdrop-blur-sm flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
