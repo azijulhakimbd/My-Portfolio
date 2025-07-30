@@ -5,6 +5,7 @@ import Skills from '../../Pages/Home/Skills/Skills';
 import Projects from '../../Pages/Home/Projects/Projects';
 import Contact from '../../Pages/Home/Contact/Contact';
 import Stats from '../../Pages/Home/Stats/Stats';
+import Location from '../../Pages/Home/Location/Location';
 
 
 
@@ -17,6 +18,7 @@ const HomeLayout = () => {
             <Projects></Projects>
             <Stats></Stats>
             <Contact></Contact>
+            <Location></Location>
         </div>
     );
 };

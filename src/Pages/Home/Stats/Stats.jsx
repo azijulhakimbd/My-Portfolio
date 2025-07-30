@@ -64,9 +64,9 @@ const Stats = () => {
           />
           <StatCard
             icon={<FaRocket />}
-            number="2+"
+            number="3"
             label="Deployments"
-            description="Hosted apps on Netlify & Firebase"
+            description="Hosted apps on Netlify,Vercel & Firebase"
           />
           <StatCard
             icon={<FaShieldAlt />}
@@ -85,7 +85,7 @@ const Stats = () => {
           />
           <StatCard
             icon={<FaAward />}
-            number="7"
+            number="7+"
             label="Certifications"
             description="Professional courses & achievements"
           />

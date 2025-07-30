@@ -31,8 +31,7 @@ const Contact = () => {
 
   return (
     <motion.div
-      data-aos="zoom-in"
-      className="max-w-6xl mx-auto px-4 py-20"
+      className="max-w-6xl mx-auto px-4 sm:px-6 md:px-10 py-20"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -106,11 +105,7 @@ const Contact = () => {
             </motion.div>
           ))}
 
-          <motion.div
-            className="mt-6"
-            custom={3}
-            variants={itemVariants}
-          >
+          <motion.div className="mt-6" custom={3} variants={itemVariants}>
             <h4 className="font-semibold fira-sans-bold mb-2 text-base-content">
               📱 Scan to More Details
             </h4>
@@ -129,7 +124,9 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          <Lottie animationData={contactAnimation} loop={true} className="h-50" />
+          <div role="img" aria-label="Contact animation">
+            <Lottie animationData={contactAnimation} loop className="h-50" />
+          </div>
 
           <motion.form
             action="mailto:azijul.info@gmail.com"
@@ -139,7 +136,6 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
-            whileFocus={{ scale: 1.02 }}
           >
             <motion.input
               type="text"
@@ -176,6 +172,7 @@ const Contact = () => {
           </motion.form>
         </motion.div>
       </div>
+
     </motion.div>
   );
 };
