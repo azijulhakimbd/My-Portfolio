@@ -1,17 +1,20 @@
 export const projects = [
   // Latest Project First
-  // MA Shift Project
+  // Petsera Project
   {
     id: "1",
-    name: "Parcel Delivery App",
+    name: "Petsera — MERN Pet Adoption & Donation Platform",
     images: [
-      "https://i.postimg.cc/g2srZ48L/MA-SHIFT-Banner.png",
-      "https://i.postimg.cc/pXx2Jz2f/Visiable.png",
-      "https://i.postimg.cc/Vkmdv2rc/Coverage.png",
-      "https://i.postimg.cc/fbbyjXf2/MA-SHIFT.png",
+      "https://i.postimg.cc/2S8nCtww/Petsera-Banner.jpg",
+      "https://i.postimg.cc/XNdfLdqw/Feature.jpg",
+      "https://i.postimg.cc/DyhqM04R/About.jpg",
+      "https://i.postimg.cc/28x4RY4y/All-Pets-1.jpg",
+      "https://i.postimg.cc/hvLVGW6C/Donations-1.jpg",
+      "https://i.postimg.cc/yxdntG2k/Dashboard.jpg",
+      "https://i.postimg.cc/j5RMQ2X6/All-User.jpg"
     ],
     description:
-      "A full-stack parcel delivery platform with role-based dashboards, parcel tracking, and delivery cost calculations.",
+      "Petsera is a full-featured, secure, and responsive pet adoption platform built with the MERN stack. It allows users to adopt pets, create & manage donation campaigns, donate via Stripe, and access personalized dashboards. Admins can manage users, pets, and campaigns through a dedicated panel. Helping animals find loving homes through technology.",
     stack: [
       "React",
       "Tailwind CSS",
@@ -19,21 +22,25 @@ export const projects = [
       "MongoDB",
       "JWT",
       "Firebase",
+      "Stripe",
     ],
-    live: "https://ma-shift.netlify.app/",
-    client: "https://github.com/azijulhakimbd/MA-Shift-Client",
-    server: "https://github.com/azijulhakimbd/MA-Shift-Server",
+    live: "https://petsera.netlify.app/",
+    client: "https://github.com/azijulhakimbd/Petsera-Client-Side",
+    server: "https://github.com/azijulhakimbd/Petsera-Server-Side",
     features: [
-      "Role-based login: Admin, Agent, and User",
-      "Real-time parcel tracking",
-      "Cost calculation by weight & distance",
-      "Dashboard with parcel status analytics",
-      "Secure JWT-based route protection",
+      "Firebase Authentication with Email, Google & GitHub",
+      "JWT-protected routes with role-based access",
+      "Pet adoption with modal-based request system",
+      "Create and donate to campaigns via Stripe",
+      "User dashboard to manage pets and donations",
+      "Admin panel to manage users, pets, and campaigns",
+      "Infinite scrolling for pets and donations",
+      "WYSIWYG Markdown editor for campaigns",
     ],
     challenges:
-      "Implementing real-time parcel status, secure role-based access for admins and delivery agents.",
+      "Implementing Stripe payment integration, infinite scrolling with smooth UX, and handling role-based access for admin features securely.",
     improvements:
-      "Integrate payment gateway, add delivery confirmation by OTP, and admin analytics dashboard.",
+      "Add email notifications, integrate adoption request approval flow, implement pet success stories, and optimize backend performance with pagination & indexing.",
   },
   // MA Restaurant Project
   {
@@ -108,9 +115,44 @@ export const projects = [
     improvements:
       "User authentication, leaderboard system, and personalized quizzes.",
   },
-  // Phudu Medical Appointment
+  // MA Shift Project
   {
     id: "4",
+    name: "Parcel Delivery App",
+    images: [
+      "https://i.postimg.cc/g2srZ48L/MA-SHIFT-Banner.png",
+      "https://i.postimg.cc/pXx2Jz2f/Visiable.png",
+      "https://i.postimg.cc/Vkmdv2rc/Coverage.png",
+      "https://i.postimg.cc/fbbyjXf2/MA-SHIFT.png",
+    ],
+    description:
+      "A full-stack parcel delivery platform with role-based dashboards, parcel tracking, and delivery cost calculations.",
+    stack: [
+      "React",
+      "Tailwind CSS",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "Firebase",
+    ],
+    live: "https://ma-shift.netlify.app/",
+    client: "https://github.com/azijulhakimbd/MA-Shift-Client",
+    server: "https://github.com/azijulhakimbd/MA-Shift-Server",
+    features: [
+      "Role-based login: Admin, Agent, and User",
+      "Real-time parcel tracking",
+      "Cost calculation by weight & distance",
+      "Dashboard with parcel status analytics",
+      "Secure JWT-based route protection",
+    ],
+    challenges:
+      "Implementing real-time parcel status, secure role-based access for admins and delivery agents.",
+    improvements:
+      "Integrate payment gateway, add delivery confirmation by OTP, and admin analytics dashboard.",
+  },
+  // Phudu Medical Appointment
+  {
+    id: "5",
     name: "Medical Appointment System",
     images: [
       "https://i.postimg.cc/L5CYxgMV/Phudu.png",
