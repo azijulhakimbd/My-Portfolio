@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import {
   FaProjectDiagram,
   FaRocket,
@@ -23,26 +25,45 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4 } },
 };
 
-const StatCard = ({ icon, number, label, description }) => (
+const StatCard = ({ icon, number, label, description, loading }) => (
   <motion.div
     variants={cardVariants}
     className="card bg-base-200 dark:bg-base-300 shadow-xl rounded-xl p-6 flex flex-col items-center text-center"
   >
-    <div className="text-4xl text-primary mb-3">{icon}</div>
+    <div className="text-4xl text-primary mb-3">
+      {loading ? <Skeleton circle width={50} height={50} /> : icon}
+    </div>
+
     <motion.h2
       className="text-3xl font-bold text-base-content"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
     >
-      {number}
+      {loading ? <Skeleton width={60} /> : number}
     </motion.h2>
-    <p className="text-lg font-semibold mt-2 text-primary">{label}</p>
-    <p className="text-base-content opacity-70 mt-1 text-sm">{description}</p>
+
+    <p className="text-lg font-semibold mt-2 text-primary">
+      {loading ? <Skeleton width={100} /> : label}
+    </p>
+
+    <p className="text-base-content opacity-70 mt-1 text-sm">
+      {loading ? <Skeleton count={2} /> : description}
+    </p>
   </motion.div>
 );
 
 const Stats = () => {
+  const [loading, setLoading] = useState(true);
+
+  // Simulate data loading
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // 2 seconds loading
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="min-h-screen bg-base-100 dark:bg-base-200 py-20 px-6">
       <motion.div
@@ -61,18 +82,21 @@ const Stats = () => {
             number="5+"
             label="Full-Stack Projects"
             description="Built robust MERN stack applications"
+            loading={loading}
           />
           <StatCard
             icon={<FaRocket />}
             number="3"
             label="Deployments"
             description="Hosted apps on Netlify,Vercel & Firebase"
+            loading={loading}
           />
           <StatCard
             icon={<FaShieldAlt />}
             number="100%"
             label="JWT Auth"
             description="Implemented secure authentication"
+            loading={loading}
           />
         </motion.div>
 
@@ -82,18 +106,21 @@ const Stats = () => {
             number="10+"
             label="React Projects"
             description="Dashboards, portals & admin panels"
+            loading={loading}
           />
           <StatCard
             icon={<FaAward />}
             number="7+"
             label="Certifications"
             description="Professional courses & achievements"
+            loading={loading}
           />
           <StatCard
             icon={<FaGithub />}
             number="100+"
             label="GitHub Contributions"
             description="In a single month"
+            loading={loading}
           />
         </motion.div>
       </motion.div>

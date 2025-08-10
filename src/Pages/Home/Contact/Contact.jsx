@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaWhatsapp, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 import Lottie from "lottie-react";
 import { motion } from "framer-motion";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import contactAnimation from "../../../assets/Lottie/Email.json";
 
 const containerVariants = {
@@ -23,11 +25,18 @@ const itemVariants = {
 };
 
 const Contact = () => {
+  const [loading, setLoading] = useState(true);
   const whatsappNumber = "8801758524125";
   const whatsappMessage = "Hello Azijul";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     whatsappMessage
   )}`;
+
+  useEffect(() => {
+    // Simulate loading delay
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <motion.div
@@ -42,7 +51,7 @@ const Contact = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Contact Me
+        {loading ? <Skeleton width={200} height={30} /> : "Contact Me"}
       </motion.h2>
 
       <div className="grid fira-sans-bold md:grid-cols-2 gap-10 items-center">
@@ -53,9 +62,7 @@ const Contact = () => {
           animate="visible"
           variants={{
             visible: {
-              transition: {
-                staggerChildren: 0.2,
-              },
+              transition: { staggerChildren: 0.2 },
             },
           }}
         >
@@ -100,20 +107,38 @@ const Contact = () => {
               whileHover={isLink ? { scale: 1.05 } : undefined}
               whileTap={isLink ? { scale: 0.95 } : undefined}
             >
-              {icon}
-              <span>{content}</span>
+              {loading ? (
+                <>
+                  <Skeleton circle width={24} height={24} />
+                  <Skeleton width={200} height={20} />
+                </>
+              ) : (
+                <>
+                  {icon}
+                  <span>{content}</span>
+                </>
+              )}
             </motion.div>
           ))}
 
           <motion.div className="mt-6" custom={3} variants={itemVariants}>
-            <h4 className="font-semibold fira-sans-bold mb-2 text-base-content">
-              📱 Scan to More Details
-            </h4>
-            <img
-              className="w-40 border rounded-md shadow"
-              src="https://i.postimg.cc/3RKKHf1J/Contact.jpg"
-              alt="QR WhatsApp"
-            />
+            {loading ? (
+              <>
+                <Skeleton width={180} height={20} />
+                <Skeleton width={160} height={160} />
+              </>
+            ) : (
+              <>
+                <h4 className="font-semibold fira-sans-bold mb-2 text-base-content">
+                  📱 Scan to More Details
+                </h4>
+                <img
+                  className="w-40 border rounded-md shadow"
+                  src="https://i.postimg.cc/3RKKHf1J/Contact.jpg"
+                  alt="QR WhatsApp"
+                />
+              </>
+            )}
           </motion.div>
         </motion.div>
 
@@ -124,9 +149,13 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          <div role="img" aria-label="Contact animation">
-            <Lottie animationData={contactAnimation} loop className="h-50" />
-          </div>
+          {loading ? (
+            <Skeleton height={200} />
+          ) : (
+            <div role="img" aria-label="Contact animation">
+              <Lottie animationData={contactAnimation} loop className="h-50" />
+            </div>
+          )}
 
           <motion.form
             action="mailto:azijul.info@gmail.com"
@@ -137,42 +166,52 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
           >
-            <motion.input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              className="input input-bordered w-full bg-base-100 text-base-content"
-              required
-              whileFocus={{ scale: 1.02 }}
-            />
-            <motion.input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              className="input input-bordered w-full bg-base-100 text-base-content"
-              required
-              whileFocus={{ scale: 1.02 }}
-            />
-            <motion.textarea
-              name="message"
-              rows="4"
-              placeholder="Your Message"
-              className="textarea textarea-bordered w-full bg-base-100 text-base-content"
-              required
-              whileFocus={{ scale: 1.02 }}
-            ></motion.textarea>
-            <motion.button
-              type="submit"
-              className="rubik btn btn-primary w-full md:w-auto"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Send Message
-            </motion.button>
+            {loading ? (
+              <>
+                <Skeleton height={45} />
+                <Skeleton height={45} />
+                <Skeleton height={100} />
+                <Skeleton width={150} height={45} />
+              </>
+            ) : (
+              <>
+                <motion.input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  className="input input-bordered w-full bg-base-100 text-base-content"
+                  required
+                  whileFocus={{ scale: 1.02 }}
+                />
+                <motion.input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  className="input input-bordered w-full bg-base-100 text-base-content"
+                  required
+                  whileFocus={{ scale: 1.02 }}
+                />
+                <motion.textarea
+                  name="message"
+                  rows="4"
+                  placeholder="Your Message"
+                  className="textarea textarea-bordered w-full bg-base-100 text-base-content"
+                  required
+                  whileFocus={{ scale: 1.02 }}
+                ></motion.textarea>
+                <motion.button
+                  type="submit"
+                  className="rubik btn btn-primary w-full md:w-auto"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Send Message
+                </motion.button>
+              </>
+            )}
           </motion.form>
         </motion.div>
       </div>
-
     </motion.div>
   );
 };

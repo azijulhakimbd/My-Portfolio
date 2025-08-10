@@ -1,48 +1,61 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router";
 import { FaGlobe, FaCode, FaServer, FaArrowRight } from "react-icons/fa";
 import { TbStack } from "react-icons/tb";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import Slider from "react-slick";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-const ProjectCard = ({ project }) => {
-  const [current, setCurrent] = useState(0);
+const ProjectCard = ({ project, loading = false }) => {
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: project?.images?.length > 1,
+    autoplaySpeed: 3000,
+    arrows: true,
+    adaptiveHeight: true,
+  };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % project.images.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [project.images.length]);
+  if (loading) {
+    // Skeleton placeholders for card
+    return (
+      <div className="card mx-auto bg-base-100 shadow-md border border-primary transition duration-300 p-5">
+        <Skeleton height={320} className="rounded-t-lg mb-4" />
+        <Skeleton height={30} width={"60%"} className="mb-3" />
+        <Skeleton count={3} height={15} className="mb-2" />
+        <Skeleton height={25} width={"40%"} className="mb-4" />
+        <Skeleton height={30} width={"80%"} />
+      </div>
+    );
+  }
 
   return (
     <motion.div
       whileHover={{ scale: 1.03, boxShadow: "0 8px 20px rgba(0,0,0,0.15)" }}
       className="card mx-auto bg-base-100 shadow-md border border-primary transition duration-300"
     >
-      {/* Image Carousel */}
       <div className="relative h-60 sm:h-72 md:h-80 w-full overflow-hidden rounded-t-lg">
-        <AnimatePresence mode="wait">
-          {project.images.map((img, index) =>
-            index === current ? (
-              <motion.img
-                key={img}
+        <Slider {...sliderSettings}>
+          {project.images.map((img, index) => (
+            <div key={index}>
+              <img
                 src={img}
-                alt={project.name}
+                alt={`${project.name} image ${index + 1}`}
                 loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1 }}
+                className="w-full h-60 sm:h-72 md:h-80 object-cover rounded-t-lg"
               />
-            ) : null
-          )}
-        </AnimatePresence>
+            </div>
+          ))}
+        </Slider>
       </div>
 
-      {/* Card Body */}
       <div className="card-body text-base-content p-5 flex flex-col">
-        {/* Title */}
         <motion.h2
           className="space-grotesk card-title text-2xl text-primary font-bold"
           initial={{ opacity: 0, y: 10 }}
@@ -52,7 +65,6 @@ const ProjectCard = ({ project }) => {
           {project.name}
         </motion.h2>
 
-        {/* Description */}
         <motion.p
           className="fira-sans-bold text-sm md:text-base"
           initial={{ opacity: 0, y: 10 }}
@@ -62,7 +74,6 @@ const ProjectCard = ({ project }) => {
           {project.description.slice(0, 150)}...
         </motion.p>
 
-        {/* Features List */}
         {project.features && (
           <motion.div
             className="mt-3"
@@ -81,7 +92,6 @@ const ProjectCard = ({ project }) => {
           </motion.div>
         )}
 
-        {/* Stack Badges */}
         <motion.div
           className="my-3"
           initial={{ opacity: 0 }}
@@ -100,7 +110,6 @@ const ProjectCard = ({ project }) => {
           </div>
         </motion.div>
 
-        {/* Buttons */}
         <div className="card-actions fira-sans-bold justify-start flex-wrap gap-2 mt-auto">
           {[
             { href: project.live, icon: <FaGlobe />, label: "Live" },
