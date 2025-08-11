@@ -16,6 +16,8 @@ import {
   SiLinkedin,
 } from "react-icons/si";
 import { motion, AnimatePresence } from "framer-motion";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 // Animation Variants
 const containerVariants = {
@@ -25,16 +27,12 @@ const containerVariants = {
 
 const galleryVariants = {
   hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
+  visible: { transition: { staggerChildren: 0.1 } },
 };
 
 const imageVariants = {
   hidden: { opacity: 0, scale: 0.9 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
 };
 
 const AboutPage = () => {
@@ -66,6 +64,8 @@ const AboutPage = () => {
   ];
 
   const [selectedImage, setSelectedImage] = useState(null);
+  const [loadingProfile, setLoadingProfile] = useState(true);
+  const [loadedGalleryImages, setLoadedGalleryImages] = useState({});
 
   return (
     <section className="px-4 py-24 bg-base-100 text-base-content min-h-screen">
@@ -77,10 +77,26 @@ const AboutPage = () => {
       >
         {/* Profile Section */}
         <div className="relative flex justify-center items-center">
-          <img
+          {loadingProfile && (
+            <Skeleton
+              circle
+              width={256}
+              height={256}
+              baseColor="#e0e0e0"
+              highlightColor="#f5f5f5"
+            />
+          )}
+          <motion.img
             src="https://i.postimg.cc/VvL4StR9/WEB.jpg"
             alt="Azijul Hakim"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={
+              !loadingProfile
+                ? { opacity: 1, scale: 1, transition: { duration: 0.5 } }
+                : {}
+            }
             className="w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-primary z-10"
+            onLoad={() => setLoadingProfile(false)}
           />
           <div className="absolute w-80 h-80 rounded-full animate-spin-slow z-0 flex justify-center items-center">
             <div className="absolute top-0">
@@ -104,7 +120,8 @@ const AboutPage = () => {
             Hi, I'm Md. Azijul Hakim
           </h1>
           <p className="text-base fira-sans-bold leading-relaxed mb-4">
-            A passionate <span className="font-semibold">Front-End Developer</span> based in
+            A passionate{" "}
+            <span className="font-semibold">Front-End Developer</span> based in
             <span className="text-primary"> Sherpur, Mymensingh</span>. I
             specialize in building modern, user-friendly web applications using
             technologies like React, Tailwind CSS, Firebase, and Express.js. I'm
@@ -119,7 +136,8 @@ const AboutPage = () => {
               <FaPhoneAlt className="text-primary" /> +880 1758 52 4125
             </p>
             <p className="flex items-center gap-2">
-              <FaMapMarkerAlt className="text-primary" /> Mymensingh, Bangladesh.
+              <FaMapMarkerAlt className="text-primary" /> Mymensingh,
+              Bangladesh.
             </p>
             <p className="flex items-center gap-2">
               <SiGithub className="text-primary" />
@@ -177,27 +195,46 @@ const AboutPage = () => {
           </h2>
           <ul className="fira-sans-bold text-sm space-y-3">
             <li className="flex items-center gap-2">
-              <img src="https://d4.alternativeto.net/ySSfp0y2o2yCDSyU6iEdA0rGBv6xs2LQM43xJJeCT_I/rs:fit:140:140:0/g:ce:0:0/exar:1/YWJzOi8vZGlzdC9pY29ucy9wcm9ncmFtbWluZy1oZXJvXzE3NzMyNS5qcGc.png" className="w-5 h-5 rounded-full" />
+              <img
+                src="https://d4.alternativeto.net/ySSfp0y2o2yCDSyU6iEdA0rGBv6xs2LQM43xJJeCT_I/rs:fit:140:140:0/g:ce:0:0/exar:1/YWJzOi8vZGlzdC9pY29ucy9wcm9ncmFtbWluZy1oZXJvXzE3NzMyNS5qcGc.png"
+                className="w-5 h-5 rounded-full"
+              />
               Complete Web Development – Programming Hero - 2025
             </li>
             <li className="flex items-center gap-2">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" className="w-6 h-5 bg-white" />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg"
+                className="w-6 h-5 bg-white"
+              />
               Cyber Security Fundamentals – Udemy - 2023
             </li>
             <li className="flex items-center gap-2">
-              <img src="https://lh3.googleusercontent.com/a-/ALV-UjUMhEcF9J5oQhznLXazWCYuoDEOlOKnjEY9PhxEXycEdKD8Ujk=s240-p-k-rw-no" className="w-5 h-5 rounded-full" />
+              <img
+                src="https://i.postimg.cc/MHCdMLNW/Influencer-Academy-Logo.webp"
+                className="w-5 h-5 rounded-full"
+              />
               UI/UX Design Using Figma — Influencer Academy — 2022
             </li>
             <li className="flex items-center gap-2">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" className="w-5 h-5 rounded-full" />
-              Microsoft Azure Fundamentals – Bangladesh Hi-Tech Park Authority - 2021
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                className="w-5 h-5 rounded-full"
+              />
+              Microsoft Azure Fundamentals – Bangladesh Hi-Tech Park Authority -
+              2021
             </li>
             <li className="flex items-center gap-2">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" className="w-5 h-5 rounded-full" />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                className="w-5 h-5 rounded-full"
+              />
               ASP.NET Core MVC – Bangladesh Hi-Tech Park Authority - 2021
             </li>
             <li className="flex items-center gap-2">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Government_of_Bangladesh_Logo_%28unofficial_and_fictional_logo%29.png" className="w-5 h-5 rounded-full" />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Government_of_Bangladesh_Logo_%28unofficial_and_fictional_logo%29.png"
+                className="w-5 h-5 rounded-full"
+              />
               Web Design and Development – LEDP, ICT Division, Bangladesh — 2020
             </li>
             <li className="flex items-center gap-2">
@@ -206,17 +243,18 @@ const AboutPage = () => {
             </li>
             <li className="flex items-center gap-2">
               <FaReact className="text-cyan-500" />
-              Built 10+ React projects including dashboards, portals, and admin panels
+              Built 10+ React projects including dashboards, portals, and admin
+              panels
             </li>
           </ul>
         </div>
 
-        {/* Gallery with animation */}
+        {/* Gallery */}
         <motion.div
           variants={galleryVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-2 gap-4 border border-[#efefef] shadow-xl rounded-2xl p-5"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-4 shadow-xl rounded-2xl p-5"
         >
           {galleryImages.map((img, index) => (
             <motion.div
@@ -227,9 +265,29 @@ const AboutPage = () => {
               transition={{ duration: 0.3 }}
               onClick={() => setSelectedImage(img)}
             >
-              <img
+              {!loadedGalleryImages[index] && (
+                <Skeleton
+                  height={160}
+                  borderRadius={8}
+                  baseColor="#e0e0e0"
+                  highlightColor="#f5f5f5"
+                />
+              )}
+              <motion.img
                 src={img.src}
                 alt={img.title}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={
+                  loadedGalleryImages[index]
+                    ? { opacity: 1, scale: 1, transition: { duration: 0.4 } }
+                    : {}
+                }
+                onLoad={() =>
+                  setLoadedGalleryImages((prev) => ({
+                    ...prev,
+                    [index]: true,
+                  }))
+                }
                 className="rounded-lg shadow-md object-cover h-40 w-full"
               />
               <p className="text-center text-xs mt-1 text-primary font-semibold">
@@ -240,7 +298,7 @@ const AboutPage = () => {
         </motion.div>
       </div>
 
-      {/* Modal with AnimatePresence */}
+      {/* Modal */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div

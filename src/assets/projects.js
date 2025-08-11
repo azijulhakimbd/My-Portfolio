@@ -1,5 +1,4 @@
 export const projects = [
-  // Latest Project First
   // Petsera Project
   {
     id: "1",
@@ -14,7 +13,7 @@ export const projects = [
       "https://i.postimg.cc/j5RMQ2X6/All-User.jpg"
     ],
     description:
-      "Petsera is a full-featured, secure, and responsive pet adoption platform built with the MERN stack. It allows users to adopt pets, create & manage donation campaigns, donate via Stripe, and access personalized dashboards. Admins can manage users, pets, and campaigns through a dedicated panel. Helping animals find loving homes through technology.",
+      "Petsera is a full-featured, secure, and responsive pet adoption and donation platform built with the MERN stack. It connects animal lovers with pets in need while enabling secure online donations via Stripe. Users can adopt pets, create & manage donation campaigns, and access personalized dashboards. The admin panel allows comprehensive management of users, pets, and campaigns. Designed with accessibility and performance in mind, Petsera empowers communities to help animals find loving homes through technology.",
     stack: [
       "React",
       "Tailwind CSS",
@@ -38,24 +37,27 @@ export const projects = [
       "WYSIWYG Markdown editor for campaigns",
     ],
     challenges:
-      "Implementing Stripe payment integration, infinite scrolling with smooth UX, and handling role-based access for admin features securely.",
+      "Integrating secure Stripe payments while maintaining PCI compliance, building infinite scrolling without hurting performance, creating a robust role-based access system for different user types, handling large image uploads efficiently, ensuring SEO optimization despite heavy client-side rendering.",
     improvements:
-      "Add email notifications, integrate adoption request approval flow, implement pet success stories, and optimize backend performance with pagination & indexing.",
+      "Add automated email notifications for adoption status changes, implement an adoption request approval workflow, add pet success stories section, optimize backend queries with indexing and caching, introduce AI-powered pet matching recommendations.",
   },
+
   // MA Restaurant Project
   {
     id: "2",
     name: "Restaurant Management System",
     images: [
-      "https://i.postimg.cc/B6Fg5NHs/Restaurant-Management-System-Google-Chrome-6-28-2025-8-31-46-AM.png",
-      "https://i.postimg.cc/FzQxTcVS/Restaurant-Management-System-Google-Chrome-6-28-2025-8-31-52-AM.png",
-      "https://i.postimg.cc/5tTgFDHn/Restaurant-Management-System-Google-Chrome-6-28-2025-8-31-55-AM.png",
-      "https://i.postimg.cc/7LfXhqL5/Restaurant-Management-System-Google-Chrome-6-28-2025-8-32-13-AM.png",
-      "https://i.postimg.cc/CMj7zPws/Restaurant-Management-System-Google-Chrome-6-28-2025-8-33-26-AM.png",
-      "https://i.postimg.cc/RhQLyFgD/Restaurant-Management-System-Google-Chrome-6-28-2025-8-32-35-AM.png",
+      "https://i.postimg.cc/1XWRBX8J/MA-Banner.jpg",
+      "https://i.postimg.cc/5y9N8L2X/Top-Food.png",
+      "https://i.postimg.cc/Jn5zyPMw/Offer-Page.jpg",
+      "https://i.postimg.cc/HxgLsfG4/ALL-Foods.jpg",
+      "https://i.postimg.cc/wBJvz9rj/Food-Gallery.jpg",
+      "https://i.postimg.cc/L6ChBCf2/Dashboard-MA.jpg",
+      "https://i.postimg.cc/P50x0C27/MY-Foods.jpg",
+      "https://i.postimg.cc/2S1yHQFv/My-Order.png",
     ],
     description:
-      "A restaurant app for managing foods, orders, and customer interactions with admin and user dashboards.",
+      "A comprehensive restaurant management web application enabling admins to add, update, and delete food items, track orders, and manage customers. Customers can browse the menu, place orders, and view their order history. Built with a mobile-first approach, it ensures a smooth experience across devices.",
     stack: [
       "HTML",
       "JavaScript",
@@ -76,10 +78,11 @@ export const projects = [
       "Responsive UI with clean layout",
     ],
     challenges:
-      "Handling dynamic food items, filtering per user/admin, secure data flow.",
+      "Implementing dynamic filtering and search without overloading the database, ensuring smooth order management in real-time, handling secure image uploads for food items, and building a unified responsive design for both admin and customer views.",
     improvements:
-      "Add delivery scheduling, push notifications, and exportable reports.",
+      "Integrate live order tracking, enable scheduled deliveries, add push notifications for order status changes, implement loyalty points system, and support multi-language menus.",
   },
+
   // HobbyHub Project
   {
     id: "3",
@@ -90,7 +93,7 @@ export const projects = [
       "https://i.postimg.cc/9MQTxpvs/h-02.png",
     ],
     description:
-      "Welcome to HobbyHub, a platform to discover, join, and create local hobby groups like book clubs, painting circles, or hiking teams.",
+      "HobbyHub is a platform to discover, join, and create local hobby groups. Whether it's a book club, hiking group, or painting circle, users can connect with like-minded individuals in their area. The platform features group profiles, activity feeds, and event organization tools, making community engagement easy and fun.",
     stack: [
       "React",
       "Node.js",
@@ -111,10 +114,12 @@ export const projects = [
       "Clean UI optimized for mobile users",
       "Firebase authentication",
     ],
-    challenges: "Responsive UI and local data search/filter logic.",
+    challenges:
+      "Implementing efficient location-based filtering, designing a mobile-first UI with consistent performance, managing group event scheduling, and handling spam prevention in public group feeds.",
     improvements:
-      "User authentication, leaderboard system, and personalized quizzes.",
+      "Add private messaging between group members, integrate calendar sync with Google/Outlook, support group image galleries, and implement AI-based hobby recommendations.",
   },
+
   // MA Shift Project
   {
     id: "4",
@@ -126,7 +131,7 @@ export const projects = [
       "https://i.postimg.cc/fbbyjXf2/MA-SHIFT.png",
     ],
     description:
-      "A full-stack parcel delivery platform with role-based dashboards, parcel tracking, and delivery cost calculations.",
+      "A full-stack parcel delivery platform featuring real-time parcel tracking, cost estimation, and role-based dashboards for admins, agents, and users. Built to handle high volumes of deliveries with accuracy and transparency.",
     stack: [
       "React",
       "Tailwind CSS",
@@ -146,10 +151,11 @@ export const projects = [
       "Secure JWT-based route protection",
     ],
     challenges:
-      "Implementing real-time parcel status, secure role-based access for admins and delivery agents.",
+      "Building accurate delivery cost algorithms, ensuring real-time updates for parcel status without delays, managing secure access across multiple roles, and scaling the backend for high request volumes.",
     improvements:
-      "Integrate payment gateway, add delivery confirmation by OTP, and admin analytics dashboard.",
+      "Integrate mobile push notifications, add OTP-based delivery confirmation, implement live map tracking for couriers, and offer payment integration for prepaid orders.",
   },
+
   // Phudu Medical Appointment
   {
     id: "5",
@@ -163,7 +169,7 @@ export const projects = [
       "https://i.postimg.cc/PxM88F39/Blog.png",
     ],
     description:
-      "A modern and user-friendly medical appointment booking web application built with React. Seamlessly search doctors, view their profiles, and book appointments with ease.",
+      "Phudu is a modern and user-friendly medical appointment booking web app that allows patients to browse doctor profiles, check ratings, view experience details, and book appointments seamlessly. The system is designed to work without a backend but can easily integrate with APIs for real-time scheduling.",
     stack: [
       "React",
       "React Router",
@@ -182,8 +188,8 @@ export const projects = [
       "Fast, intuitive, and modern UI",
     ],
     challenges:
-      "Designing an intuitive user interface for both patients and doctors, and implementing reusable modal logic for booking without a backend.",
+      "Designing a smooth booking experience without backend APIs, creating reusable modal components for appointment scheduling, ensuring the charts load quickly on low-end devices, and balancing UI responsiveness with visual richness.",
     improvements:
-      "Add real-time appointment conflict detection, implement backend with database support for doctor schedules, and include login/authentication for better user experience.",
+      "Add backend integration with database for doctor schedules, enable appointment conflict detection, support video consultation links, and allow patients to leave verified reviews.",
   },
 ];

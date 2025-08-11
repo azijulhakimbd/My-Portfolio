@@ -14,7 +14,7 @@ const SkeletonCard = () => (
 );
 
 const Projects = () => {
-  // Simulated loading state (replace with real loading state logic if you fetch projects)
+  // Simulated loading state
   const loading = projects.length === 0;
 
   return (
@@ -22,10 +22,10 @@ const Projects = () => {
       initial={{ opacity: 0, y: 60 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="max-w-7xl mx-auto px-4 py-20"
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
     >
       <motion.h2
-        className="text-3xl space-grotesk font-bold text-start text-primary mb-10"
+        className="text-2xl sm:text-3xl lg:text-4xl font-bold space-grotesk text-start text-primary mb-6 sm:mb-8 lg:mb-10"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
@@ -34,7 +34,7 @@ const Projects = () => {
       </motion.h2>
 
       <motion.div
-        className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8"
+        className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-6 md:gap-8"
         initial="hidden"
         animate="visible"
         variants={{

@@ -32,7 +32,7 @@ const Banner = () => {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          src="https://i.postimg.cc/D0x6thnX/18075.jpg"
+          src="https://i.postimg.cc/s1dqcbRW/Md-Azijul-Hakim.jpg"
           alt="Md. Azijul Hakim"
           className="w-48 sm:w-56 md:w-64 lg:w-80 rounded-xl shadow-2xl border-4 border-primary"
           loading="lazy"

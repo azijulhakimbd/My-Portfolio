@@ -89,7 +89,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`navbar shadow fixed z-50 top-0 w-full px-5 lg:px-10 poppins-bold transition-all duration-300 ${
+      className={`navbar shadow fixed z-50 top-0 w-full px-5 lg:px-20 poppins-bold transition-all duration-300 ${
         isScrolled ? "bg-base-100/5 backdrop-blur-md shadow-sm" : "bg-base-100"
       }`}
     >
