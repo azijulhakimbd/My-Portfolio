@@ -29,7 +29,7 @@ const Footer = () => {
           <p className="inter text-primary mb-2 text-sm sm:text-base">
             MERN stack developer passionate about building clean, responsive, and user-friendly web applications.
           </p>
-          <p className="inter text-[#efefef] text-xs sm:text-sm">
+          <p className="inter text-blue-400 text-xs sm:text-sm">
             © {new Date().getFullYear()} All Rights Reserved
           </p>
         </div>
