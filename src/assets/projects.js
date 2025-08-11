@@ -59,13 +59,16 @@ export const projects = [
     description:
       "A comprehensive restaurant management web application enabling admins to add, update, and delete food items, track orders, and manage customers. Customers can browse the menu, place orders, and view their order history. Built with a mobile-first approach, it ensures a smooth experience across devices.",
     stack: [
-      "HTML",
+  
       "JavaScript",
       "React",
       "Node.js",
       "MongoDB",
       "Firebase",
       "Tailwind CSS",
+      "JWT",
+      "Express JS"
+      
     ],
     live: "https://ma-restaurant.netlify.app/",
     client: "https://github.com/azijulhakimbd/MA-Restaurant-Client",
